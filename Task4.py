@@ -26,21 +26,22 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-bangalor_telemarketeer_numbers = []
-bangalor_telemarketeer_rules = ['140']
-
-def addNumber(number, rule):
-  if re.search(f"^{rule}", number) and number not in bangalor_telemarketeer_numbers:
-    bangalor_telemarketeer_numbers.append(number)
-
+non_tele = set()
+outgoing = set()
 
 for call in calls: 
   number_one = call[0]
   number_two = call[1]
-  
-  for rule in bangalor_telemarketeer_rules:
-    addNumber(number_one, rule)
-    addNumber(number_two, rule)
 
+  outgoing.add(number_one)
+  non_tele.add(number_two)
 
-print(rf"These numbers could be telemarketers:" + '\n'.join([ str(num) for num in bangalor_telemarketeer_numbers ]))
+for text in texts: 
+  number_one = text[0]
+  number_two = text[1]
+
+  non_tele.update([number_one ,number_two])
+
+possible_tele = outgoing.symmetric_difference(non_tele)
+
+print(rf"These numbers could be telemarketers:" + '\n'.join([ str(num) for num in possible_tele ]))

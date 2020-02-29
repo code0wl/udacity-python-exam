@@ -4,7 +4,6 @@ It's ok if you don't understand how to read files.
 """
 import csv
 import re
-import decimal
 
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -46,39 +45,58 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-# Part A
-bangalor_numbers = []
-bangalor_rules = ['7', '8', '9', '140', r'\(080\)']
 
-def addNumber(number, rule):
-  if re.search(f"^{rule}", number) and number not in bangalor_numbers:
-    bangalor_numbers.append(number)
+def bangalore_area_code(number):
+    return re.match(r'^\(080\)', number)
 
 
-for call in calls: 
-  number_one = call[0]
-  number_two = call[1]
-  
-  for rule in bangalor_rules:
-    addNumber(number_one, rule)
-    addNumber(number_two, rule)
-
-bangalor_numbers.sort(key = str) 
-
-print(rf"The numbers called by people in Bangalore have codes:" + '\n'.join([ str(num) for num in bangalor_numbers ]))
+def has_area_code(number):
+    return re.match(r'^\(.*\)', number)
 
 
-# Part B
-domestic_landline_calls = []
+def has_mobile_prefix(number):
+    return re.match(r'^\d{4}', number)
 
-for call in calls: 
-  number_one = call[0]
-  number_two = call[1]
-  
-  if re.match('^\(080\)', number_one) and re.match('^\(080\)', number_two):
-    domestic_landline_calls.append(call)
 
-percentage = round(len(calls) / len(domestic_landline_calls), 2)
+def filter_area_code(number):
+    code = has_area_code(number) or has_mobile_prefix(number)
+    return code[0]
 
-print(f"{percentage} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 
+def international_calls(calls):
+    numbers_called = set()
+    domestic_calls = 0
+    international_calls = 0
+
+    for call in calls:
+        caller = call[0]
+        receiver = call[1]
+        if bangalore_area_code(caller):
+            domestic_calls += 1
+            numbers_called.add(receiver)
+
+            if bangalore_area_code(receiver):
+                international_calls += 1
+
+    percent_within_bangalore = international_calls / domestic_calls
+
+    return numbers_called, percent_within_bangalore
+
+
+def answer():
+    print("The numbers called by people in Bangalore have codes:")
+    codes = set()
+    list_of_calls, percent = international_calls(calls)
+
+    for number in sorted(list_of_calls):
+        area_code = filter_area_code(number)
+        if area_code not in codes:
+            codes.add(area_code)
+            print(area_code)
+
+    percentage = round(percent * 100, 2)
+
+    print(f"{percentage} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+
+
+answer()

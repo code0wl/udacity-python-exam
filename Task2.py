@@ -17,15 +17,15 @@ Print a message:
 September 2016.".
 """
 
-longest_call = [0, 0, 0, 0]
+callers = {}
 
 for call in calls:
     call_duration = float(call[3])
-    longest_call_duration = float(longest_call[3])
-    if call_duration > longest_call_duration:
-        longest_call = call
+    callers[call[0]] = call_duration
+    callers[call[1]] = call_duration
 
+longest_call = max(zip(callers.values(), callers.keys()))
 
-print(f"{longest_call[0]} spent the longest time, {longest_call[3]} seconds, on the phone during September 2016.")
+print(f"{longest_call[1]} spent the longest time, {longest_call[0]} seconds, on the phone during September 2016.")
 
 
