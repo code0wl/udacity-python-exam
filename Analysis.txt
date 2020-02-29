@@ -1,24 +1,22 @@
 Analysis using Big O Notation
 
-Task0
+Task-0
 With each function accessing a specific item in the array
 using an index or negative one, each function performs only
 one operation, agnostic of the given size (n).
-O(0n + 1) + O(0n + 1)
-O(0n + 2)
 
 Answer
 O(1)
 ~~~
 
-Task1
+Task-1
 Two different loops updating an existing set whom is taking care of duplicated records. 
 
 Answer
 O(n)
 ~~~
 
-Task2
+Task-2
 Since the second for loop only looks at the max of 2 numbers,
 on input size. Total operations outside the loop: 3. Operations inside
 the loop: 6. Our notation is thus O(1n + 9) or simply O(n).
@@ -27,7 +25,7 @@ Answer
 O(n)
 ~~~
 
-Task3
+Task-3
 Counting the total operations we get 15. We then loop over our input twice, while also
 performing a sorting algorithm. This would mean our Big O notation could resemble
 O(2n + 15) + O(n log n), but converted to O(n log n).
@@ -36,11 +34,11 @@ Answer
 O(n log n)
 ~~~
 
-Task 4
-With seven operations, four for loops and 1 a sort operation (n log n),
-the notation could look like: O(4n + 7) + O(n log n). Translated to
-O(n log n).
+Task-4
+Three for loops and 1 a sort operation,
+the notation could look like: O(3n + 7) + O(n). Translated to
+O(n).
 
 Answer
-O(n log n)
+O(n)
 ~~~
