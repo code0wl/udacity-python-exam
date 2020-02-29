@@ -25,9 +25,9 @@ unique_phonenumbers = set()
 
 for call in calls:
     unique_phonenumbers.update([call[0], call[1]])
-    
+
 for text in texts:
-    unique_phonenumbers.update([text[0], text[1]])        
+    unique_phonenumbers.update([text[0], text[1]])
 
-print(f"There are {len(unique_phonenumbers)} different telephone numbers in the records")
-
+print(
+    f"There are {len(unique_phonenumbers)} different telephone numbers in the records")

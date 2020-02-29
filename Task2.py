@@ -26,6 +26,5 @@ for call in calls:
 
 longest_call = max(zip(callers.values(), callers.keys()))
 
-print(f"{longest_call[1]} spent the longest time, {longest_call[0]} seconds, on the phone during September 2016.")
-
-
+print(
+    f"{longest_call[1]} spent the longest time, {longest_call[0]} seconds, on the phone during September 2016.")

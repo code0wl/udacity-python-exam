@@ -29,19 +29,20 @@ The list of numbers should be print out one per line in lexicographic order with
 non_tele = set()
 outgoing = set()
 
-for call in calls: 
-  number_one = call[0]
-  number_two = call[1]
+for call in calls:
+    number_one = call[0]
+    number_two = call[1]
 
-  outgoing.add(number_one)
-  non_tele.add(number_two)
+    outgoing.add(number_one)
+    non_tele.add(number_two)
 
-for text in texts: 
-  number_one = text[0]
-  number_two = text[1]
+for text in texts:
+    number_one = text[0]
+    number_two = text[1]
 
-  non_tele.update([number_one ,number_two])
+    non_tele.update([number_one, number_two])
 
 possible_tele = outgoing.symmetric_difference(non_tele)
 
-print(rf"These numbers could be telemarketers:" + '\n'.join([ str(num) for num in possible_tele ]))
+print(rf"These numbers could be telemarketers:" +
+      '\n'.join([str(num) for num in possible_tele]))
