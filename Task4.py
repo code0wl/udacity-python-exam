@@ -26,23 +26,31 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-non_tele = set()
-outgoing = set()
 
-for call in calls:
-    number_one = call[0]
-    number_two = call[1]
+def non_tele(texts, calls):
+    real_numbers = set()
+    for text in texts:
+        real_numbers.update([text[0], text[1]])
+    for call in calls:
+        real_numbers.add(call[1])
+    return real_numbers
 
-    outgoing.add(number_one)
-    non_tele.add(number_two)
 
-for text in texts:
-    number_one = text[0]
-    number_two = text[1]
+def telemarketers_set(real_numbers, calls):
+    marketeers = set()
+    for info in calls:
+        number = info[0]
+        if number not in real_numbers:
+            marketeers.add(number)
+    return marketeers
 
-    non_tele.update([number_one, number_two])
 
-possible_tele = outgoing.symmetric_difference(non_tele)
+def answer():
+    real_numbers = non_tele(texts, calls)
+    marketeers = telemarketers_set(real_numbers, calls)
+    print("These numbers could be telemarketers: ")
+    for number in sorted(marketeers):
+        print(number)
 
-print(rf"These numbers could be telemarketers:" +
-      '\n'.join([str(num) for num in possible_tele]))
+
+answer()

@@ -3,6 +3,7 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
 import csv
+import collections
 
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
@@ -17,14 +18,28 @@ Print a message:
 September 2016.".
 """
 
-callers = {}
 
-for call in calls:
-    call_duration = float(call[3])
-    callers[call[0]] = call_duration
-    callers[call[1]] = call_duration
+def longest_phone_call(calls):
+    list_of_calls = collections.defaultdict(int)
+    longest_call = 0
+    telephone_number = ''
 
-longest_call = max(zip(callers.values(), callers.keys()))
+    for info in calls:
+        call_duration = int(info[3])
 
-print(
-    f"{longest_call[1]} spent the longest time, {longest_call[0]} seconds, on the phone during September 2016.")
+        for number in info[0:2]:
+            list_of_calls[number] += call_duration
+
+        if list_of_calls[number] > longest_call:
+            longest_call = list_of_calls[number]
+            telephone_number = number
+
+    return telephone_number, longest_call
+
+
+def answer():
+    telephone_number, total_time = longest_phone_call(calls)
+    print(F"{telephone_number} spent the longest time, {total_time} seconds, on the phone during September 2016.")
+
+
+answer()
