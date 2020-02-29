@@ -63,10 +63,10 @@ def filter_area_code(number):
     return code[0]
 
 
-def international_calls(calls):
+def incoming_calls(calls):
     numbers_called = set()
     domestic_calls = 0
-    international_calls = 0
+    incoming_calls = 0
 
     for call in calls:
         caller = call[0]
@@ -76,9 +76,9 @@ def international_calls(calls):
             numbers_called.add(receiver)
 
             if bangalore_area_code(receiver):
-                international_calls += 1
+                incoming_calls += 1
 
-    percent_within_bangalore = international_calls / domestic_calls
+    percent_within_bangalore = incoming_calls / domestic_calls
 
     return numbers_called, percent_within_bangalore
 
@@ -86,7 +86,7 @@ def international_calls(calls):
 def answer():
     print("The numbers called by people in Bangalore have codes:")
     codes = set()
-    list_of_calls, percent = international_calls(calls)
+    list_of_calls, percent = incoming_calls(calls)
 
     for number in sorted(list_of_calls):
         area_code = filter_area_code(number)
