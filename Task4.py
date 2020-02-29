@@ -28,29 +28,28 @@ The list of numbers should be print out one per line in lexicographic order with
 
 
 def non_tele(texts, calls):
-    real_numbers = set()
+    safe_numbers = set()
     for text in texts:
-        real_numbers.update([text[0], text[1]])
+        safe_numbers.update([text[0], text[1]])
     for call in calls:
-        real_numbers.add(call[1])
-    return real_numbers
+        safe_numbers.add(call[1])
+    return safe_numbers
 
 
-def telemarketers_set(real_numbers, calls):
-    marketeers = set()
+def tele(safe_numbers, calls):
+    possible_spam = set()
     for info in calls:
         number = info[0]
-        if number not in real_numbers:
-            marketeers.add(number)
-    return marketeers
+        if number not in safe_numbers:
+            possible_spam.add(number)
+    return possible_spam
 
 
 def answer():
-    real_numbers = non_tele(texts, calls)
-    marketeers = telemarketers_set(real_numbers, calls)
-    print("These numbers could be telemarketers: ")
-    for number in sorted(marketeers):
-        print(number)
+    safe_numbers = non_tele(texts, calls)
+    possible_spam = tele(safe_numbers, calls)
+    sorted_nums = sorted(possible_spam)
+    print("These numbers could be telemarketers: ", *sorted_nums, sep="\n")
 
 
 answer()

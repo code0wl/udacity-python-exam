@@ -38,7 +38,7 @@ O(n log n)
 
 Task 4
 With seven operations, four for loops and 1 a sort operation (n log n),
-the notation could look like: O(4n + 7) + O(n log n). Simplified to
+the notation could look like: O(4n + 7) + O(n log n). Translated to
 O(n log n).
 
 Answer
