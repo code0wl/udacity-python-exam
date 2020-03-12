@@ -3,7 +3,7 @@ import os
 
 def find_files(suffix, path):
     if path[-2:] == suffix:
-        print(path)
+        print("path matched: ", path)
     else:
         if os.path.isdir(path):
             for file in os.listdir(path):
