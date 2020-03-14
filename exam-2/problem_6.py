@@ -102,7 +102,7 @@ def intersection(llist_1, llist_2):
     return None
 
 
-# Test case 1
+# Specs
 linked_list_1 = LinkedList()
 linked_list_2 = LinkedList()
 
@@ -118,7 +118,6 @@ for i in element_2:
 print(union(linked_list_1, linked_list_2))
 print(intersection(linked_list_1, linked_list_2))
 
-# Test case 2
 linked_list_3 = LinkedList()
 linked_list_4 = LinkedList()
 

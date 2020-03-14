@@ -37,7 +37,7 @@ class LinkedList:
             item.next = Block(datetime.datetime.now(), value, item.hash)
 
 
-# Test Cases
+# Specs
 list = LinkedList()
 list.append('someData1')
 list.append('someData2')

@@ -36,7 +36,7 @@ class Huffman():
 # Instance
 huffman = Huffman()
 
-# Test cases
+# Specs
 if __name__ == "__main__":
     codes = {}
 
