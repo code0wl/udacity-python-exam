@@ -2,6 +2,9 @@ import os
 
 
 def find_files(suffix, path):
+    if not suffix or not path:
+        return
+
     if path[-2:] == suffix:
         print("path matched: ", path)
     else:
@@ -17,3 +20,4 @@ find_files(".h", "exam-2/testdir")
 find_files(".c", "exam-2/testdir")
 # no match
 find_files(".o", "exam-2/testdir")
+find_files("", "")
