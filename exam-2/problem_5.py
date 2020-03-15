@@ -1,5 +1,6 @@
 import datetime
 import hashlib
+from pprint import pprint
 
 
 class Block:
@@ -37,19 +38,48 @@ class LinkedList:
             item.next = Block(datetime.datetime.now(), value, item.hash)
 
 
-# Specs
-list = LinkedList()
-list.append('someData1')
-list.append('someData2')
-list.append('someData3')
-list.append('someData4')
-list.append(None)
+# # Test 1 - Normal
+# list = LinkedList()
+# list.append('Manmeet')
+# list.append('Singh')
+# list.append('is')
+# list.append('a')
+# list.append('beta')
+# list.append('tester')
 
-print(list.head.data)
+# pprint(vars(list.head))
+# pprint(vars(list.head.next))
+# pprint(vars(list.head.next.next))
+# pprint(vars(list.head.next.next.next))
+# pprint(vars(list.head.next.next.next.next))
+# pprint(vars(list.head.next.next.next.next.next))
 
-blockChainOne = list.head.next
-blockChainTwo = list.head.next.next
+# Test 2 - Edge None
+list2 = LinkedList()
+list2.append('Manmeet')
+list2.append('Singh')
+list2.append('is')
+list2.append(None)
+list2.append('beta')
+list2.append('tester')
 
-print(blockChainOne.hash == blockChainTwo.previous_hash)
+pprint(vars(list2.head))
+pprint(vars(list2.head.next))
+pprint(vars(list2.head.next.next))
+pprint(vars(list2.head.next.next.next))
+pprint(vars(list2.head.next.next.next.next))
 
-print(blockChainTwo.data)
+# Test 3 - Edge False
+list3 = LinkedList()
+list3.append('Manmeet')
+list3.append('Singh')
+list3.append('is')
+list3.append('a')
+list3.append(False)
+list3.append('tester')
+
+pprint(vars(list3.head))
+pprint(vars(list3.head.next))
+pprint(vars(list3.head.next.next))
+pprint(vars(list3.head.next.next.next))
+pprint(vars(list3.head.next.next.next.next))
