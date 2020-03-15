@@ -132,3 +132,18 @@ for i in element_2:
 
 print(union(linked_list_3, linked_list_4))
 print(intersection(linked_list_3, linked_list_4))
+
+linked_list_5 = LinkedList()
+linked_list_6 = LinkedList()
+
+element_1 = [None, None, None]
+element_2 = []
+
+for i in element_1:
+    linked_list_1.append(i)
+
+for i in element_2:
+    linked_list_2.append(i)
+
+print(union(linked_list_5, linked_list_6))
+print(intersection(linked_list_5, linked_list_6))
