@@ -51,7 +51,7 @@ print("Test 2 - Cache miss")
 # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
 our_cache.get(3)
 
-print("Test 3 - miscellaneous")
+print("Test 3 - Miscellaneous")
 our_cache1 = LRU_Cache()
 our_cache1.set(1, 1)
 our_cache1.set(4, 1)

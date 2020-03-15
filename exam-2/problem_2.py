@@ -15,9 +15,14 @@ def find_files(suffix, path):
 
 # Specs
 
-# match
+# Test 1 - Normal
 find_files(".h", "exam-2/testdir")
+
+# Test 2 - Normal 2
 find_files(".c", "exam-2/testdir")
-# no match
+
+# Test 3 - Edge No Match
 find_files(".o", "exam-2/testdir")
+
+# Test 3 - Edge No entry
 find_files("", "")
