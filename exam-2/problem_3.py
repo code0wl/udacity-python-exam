@@ -3,14 +3,17 @@ import sys
 
 class Huffman():
     def encoding(self, data):
-        dict, tree, str, encoded_str = {}, {}, '1', ''
+        if not isinstance(data, str):
+            return None, None
+
+        dict, tree, string, encoded_str = {}, {}, '1', ''
 
         for character in data:
             dict[character] = dict.get(character, 0) + 1
 
         for num in sorted(dict.items(), key=lambda x: x[1]):
-            tree[num[0]] = str
-            str = '0' + str
+            tree[num[0]] = string
+            string = '0' + string
 
         for item in data:
             encoded_str += tree[item]
@@ -36,7 +39,7 @@ class Huffman():
 # Instance
 huffman = Huffman()
 
-# Specs
+# Test 1 - Normal
 if __name__ == "__main__":
     codes = {}
 
@@ -57,3 +60,30 @@ if __name__ == "__main__":
     print("The size of the decoded data is: {}\n".format(
         sys.getsizeof(decoded_data)))
     print("The content of the encoded data is: {}\n".format(decoded_data))
+
+# Test 2 - Edge Emtpy string
+if __name__ == "__main__":
+    codes = {}
+
+    a_great_sentence = ""
+
+    print("The size of the data is: {}\n".format(
+        sys.getsizeof(a_great_sentence)))
+
+    encoded_data, tree = huffman.encoding(a_great_sentence)
+
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+
+
+# Test 3 - Edge different datatype
+if __name__ == "__main__":
+    codes = {}
+
+    a_great_sentence = True
+
+    print("The size of the data is: {}\n".format(
+        sys.getsizeof(a_great_sentence)))
+
+    encoded_data, tree = huffman.encoding(a_great_sentence)
+
+    print("The content of the encoded data is: {}\n".format(encoded_data))
