@@ -4,5 +4,6 @@ From what I have learned from the Udacity linkedlist lessons. This is a Singly l
 
 ```text
 Answer
-O(1)
+Big O Notation Time: O(1)
+Space: O(n)
 ```

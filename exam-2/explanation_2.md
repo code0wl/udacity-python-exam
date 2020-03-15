@@ -5,5 +5,6 @@ Here I just loop if the file is found and just print it if found.
 
 ```text
 Answer
-O(1)
+Big O Notation Time: O(n)
+Space: O(n log n)
 ```

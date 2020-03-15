@@ -7,5 +7,6 @@ Makes it very easy to just change the value and keep the key in place
 
 ```text
 Answer
-O(1)
+Big O Notation Time: O(1)
+Space: O(n)
 ```

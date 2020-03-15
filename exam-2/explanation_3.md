@@ -5,5 +5,6 @@ So the tree accumulates the letters and the sum of occurances.
 
 ```text
 Answer
-O(n)
+Big O Notation Time: O(n)
+Space: O(n log n)
 ```

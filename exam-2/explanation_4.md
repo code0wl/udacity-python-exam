@@ -5,5 +5,5 @@ I have gotten pretty comfortable with using Python's `in` keyword. So using this
 
 ```text
 Answer
-O(1)
+Big O Notation Time & Space: O(n): They correlate with one another.
 ```

@@ -7,5 +7,6 @@ In runtime I just loop through the lists to see if I can find matches.
 
 ```text
 Answer
-O(n)
+Big O Notation Time: O(n**2)
+Space: O(n)
 ```
