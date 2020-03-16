@@ -41,7 +41,8 @@ class Huffman():
         return decoded_str
 
 
-# Instance
+# Tests
+
 huffman = Huffman()
 
 print("Test 1 - Normal")

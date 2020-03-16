@@ -13,7 +13,7 @@ def find_files(suffix, path):
                 find_files(suffix, os.path.join(path, file))
 
 
-# Specs
+# Tests
 
 print("Test 1 - Normal")
 find_files(".h", "exam-2/testdir")

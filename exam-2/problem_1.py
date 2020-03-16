@@ -30,8 +30,8 @@ class LRU_Cache():
             self.cache[key] = value
         return True
 
-# Tests
 
+# Tests
 
 print("Test 1 - Cache hit/miss")
 our_cache = LRU_Cache(5)

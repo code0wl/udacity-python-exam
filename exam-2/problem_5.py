@@ -38,6 +38,8 @@ class LinkedList:
             item.next = Block(datetime.datetime.now(), value, item.hash)
 
 
+# Tests
+
 print("Test 1 - Normal")
 list = LinkedList()
 list.append('Manmeet')

@@ -50,7 +50,7 @@ child_user = "child_user"
 child.add_user(child_user)
 
 
-# Test cases
+# Tests
 
 print("Test 1 - Normal")
 print(is_user_in_group("sub_child_user", sub_child))  # True
