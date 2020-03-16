@@ -15,14 +15,12 @@ def find_files(suffix, path):
 
 # Specs
 
-# Test 1 - Normal
+print("Test 1 - Normal")
 find_files(".h", "exam-2/testdir")
-
-# Test 2 - Normal 2
 find_files(".c", "exam-2/testdir")
 
-# Test 3 - Edge No Match
+print("Test 2 - Edge No Match")
 find_files(".o", "exam-2/testdir")
 
-# Test 3 - Edge No entry
+print("Test 3 - Edge No Entry")
 find_files("", "")

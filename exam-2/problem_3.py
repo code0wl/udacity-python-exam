@@ -44,9 +44,8 @@ class Huffman():
 # Instance
 huffman = Huffman()
 
-# Test 1 - Normal
+print("Test 1 - Normal")
 if __name__ == "__main__":
-    print("Running test 1")
     codes = {}
 
     a_great_sentence = "The bird is the word"
@@ -67,19 +66,16 @@ if __name__ == "__main__":
         sys.getsizeof(decoded_data)))
     print("The content of the encoded data is: {}\n".format(decoded_data))
 
-# Test 2 - Edge Emtpy string
+print("Test 2 - Edge Empty string")
 if __name__ == "__main__":
-    print("Running test 2")
     codes = {}
 
     a_great_sentence = ""
 
     encoded_data, tree = huffman.encoding(a_great_sentence)
 
-
-# Test 3 - Edge different datatype
+print("Test 3 - Edge different datatype")
 if __name__ == "__main__":
-    print("Running test 3")
     codes = {}
 
     a_great_sentence = True

@@ -102,7 +102,7 @@ def intersection(llist_1, llist_2):
     return None
 
 
-# Test 1 - Normal
+print("Test 1 - Normal")
 linked_list_1 = LinkedList()
 linked_list_2 = LinkedList()
 
@@ -118,7 +118,7 @@ for i in element_2:
 print(union(linked_list_1, linked_list_2))
 print(intersection(linked_list_1, linked_list_2))
 
-# Test 2 - Edge Empty cases
+print("Test 2 - Edge Empty cases")
 linked_list_3 = LinkedList()
 linked_list_4 = LinkedList()
 
@@ -134,7 +134,7 @@ for i in element_2:
 print(union(linked_list_3, linked_list_4))
 print(intersection(linked_list_3, linked_list_4))
 
-# Test 3 - Edge Cases with None
+print("Test 2 - Edge Cases with None types")
 linked_list_5 = LinkedList()
 linked_list_6 = LinkedList()
 

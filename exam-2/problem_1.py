@@ -33,7 +33,7 @@ class LRU_Cache():
 # Tests
 
 
-print("Test 1 - Cache hit")
+print("Test 1 - Cache hit/miss")
 our_cache = LRU_Cache(5)
 our_cache.set(1, 1)
 our_cache.set(2, 2)
@@ -47,21 +47,19 @@ our_cache.get(9)      # returns -1 because 9 is not present in the cache
 our_cache.set(5, 5)
 our_cache.set(6, 6)
 
-print("Test 2 - Cache miss")
 # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
 our_cache.get(3)
 
-print("Test 3 - Miscellaneous")
-our_cache1 = LRU_Cache()
-our_cache1.set(1, 1)
-our_cache1.set(4, 1)
-our_cache1.set(2, 2)
-our_cache1.set(3, 1)
-our_cache1.set(10, 1)
-our_cache1.set(9, 10)
-our_cache1.set(19, 100)
+print("Test 2 - No Space Cache")
+our_second_cache = LRU_Cache(0)
+our_second_cache.set(1, 1)
+print(our_second_cache.get(1), 'should return 10')
 
-print(our_cache1.get(4), 'should return 1')
-print(our_cache1.get(5), 'should return -1')
-print(our_cache1.get(9), 'should return 10')
-print(our_cache1.get(19), 'should return 100')
+print("Test 3 - Setting multiple times on same key")
+our_third_cache = LRU_Cache()
+our_third_cache.set(2, 2)
+our_third_cache.set(2, 1)
+our_third_cache.set(2, 5)
+our_third_cache.set(2, 10)
+
+print(our_third_cache.get(2), 'should return 10')

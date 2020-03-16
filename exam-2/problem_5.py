@@ -38,7 +38,7 @@ class LinkedList:
             item.next = Block(datetime.datetime.now(), value, item.hash)
 
 
-# Test 1 - Normal
+print("Test 1 - Normal")
 list = LinkedList()
 list.append('Manmeet')
 list.append('Singh')
@@ -54,7 +54,7 @@ pprint(vars(list.head.next.next.next))
 pprint(vars(list.head.next.next.next.next))
 pprint(vars(list.head.next.next.next.next.next))
 
-# Test 2 - Edge None
+print("Test 2 - Edge None")
 list2 = LinkedList()
 list2.append('Manmeet')
 list2.append('Singh')
@@ -69,7 +69,7 @@ pprint(vars(list2.head.next.next))
 pprint(vars(list2.head.next.next.next))
 pprint(vars(list2.head.next.next.next.next))
 
-# Test 3 - Edge False
+print("Test 3 - Edge False")
 list3 = LinkedList()
 list3.append('Manmeet')
 list3.append('Singh')
