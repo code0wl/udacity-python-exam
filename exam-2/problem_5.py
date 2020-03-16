@@ -38,21 +38,21 @@ class LinkedList:
             item.next = Block(datetime.datetime.now(), value, item.hash)
 
 
-# # Test 1 - Normal
-# list = LinkedList()
-# list.append('Manmeet')
-# list.append('Singh')
-# list.append('is')
-# list.append('a')
-# list.append('beta')
-# list.append('tester')
+# Test 1 - Normal
+list = LinkedList()
+list.append('Manmeet')
+list.append('Singh')
+list.append('is')
+list.append('a')
+list.append('beta')
+list.append('tester')
 
-# pprint(vars(list.head))
-# pprint(vars(list.head.next))
-# pprint(vars(list.head.next.next))
-# pprint(vars(list.head.next.next.next))
-# pprint(vars(list.head.next.next.next.next))
-# pprint(vars(list.head.next.next.next.next.next))
+pprint(vars(list.head))
+pprint(vars(list.head.next))
+pprint(vars(list.head.next.next))
+pprint(vars(list.head.next.next.next))
+pprint(vars(list.head.next.next.next.next))
+pprint(vars(list.head.next.next.next.next.next))
 
 # Test 2 - Edge None
 list2 = LinkedList()

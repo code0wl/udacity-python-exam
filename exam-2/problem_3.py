@@ -4,6 +4,11 @@ import sys
 class Huffman():
     def encoding(self, data):
         if not isinstance(data, str):
+            print('Unsupported format, please pass in a string')
+            return None, None
+
+        if len(data) < 1:
+            print('Empty string')
             return None, None
 
         dict, tree, string, encoded_str = {}, {}, '1', ''
@@ -41,6 +46,7 @@ huffman = Huffman()
 
 # Test 1 - Normal
 if __name__ == "__main__":
+    print("Running test 1")
     codes = {}
 
     a_great_sentence = "The bird is the word"
@@ -63,27 +69,19 @@ if __name__ == "__main__":
 
 # Test 2 - Edge Emtpy string
 if __name__ == "__main__":
+    print("Running test 2")
     codes = {}
 
     a_great_sentence = ""
 
-    print("The size of the data is: {}\n".format(
-        sys.getsizeof(a_great_sentence)))
-
     encoded_data, tree = huffman.encoding(a_great_sentence)
-
-    print("The content of the encoded data is: {}\n".format(encoded_data))
 
 
 # Test 3 - Edge different datatype
 if __name__ == "__main__":
+    print("Running test 3")
     codes = {}
 
     a_great_sentence = True
 
-    print("The size of the data is: {}\n".format(
-        sys.getsizeof(a_great_sentence)))
-
     encoded_data, tree = huffman.encoding(a_great_sentence)
-
-    print("The content of the encoded data is: {}\n".format(encoded_data))
