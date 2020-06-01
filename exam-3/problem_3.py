@@ -5,7 +5,7 @@ def should_perform_func(input_list):
 
 def rearrange_digits(input_list):
 
-    should_perform_func()
+    should_perform_func(input_list)
 
     input_list = merge_and_sort(input_list)
 
