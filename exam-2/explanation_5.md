@@ -1,10 +1,9 @@
-# 5
+# 5 Autocomplete with Trie
 
-From what I have learned from the Udacity linkedlist lessons. This is a Singly linked list.
+As usual I've cut up the problem in two tasks
 
-Each node in the list points to the next and also storing it's own hash along with the previous hash.
-
-We are iterating on a linked list, and performing hashing operations. The Big O Notation could be simple O to 1. And Big O for Space is 1 for the hash and also 1 for the linked list.
+1. First we want to find out if the word exists inside of the list. If so we then mark it as **True**
+2. After that I use a dictionary to store children of the node. After a short research, discovered that a dictionary is a pretty solid solution in terms of performance.
 
 ```text
 Answer
