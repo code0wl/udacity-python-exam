@@ -73,12 +73,12 @@ def test_function(test_case):
 
 
 print("Test 1 - Normal")
-test_function([[1, 2, 3, 4, 5], [542, 31]])
-test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
-test_function([[1, 1, 1, 1], [22]])
-test_function([[8, 0, 1, 5, 0], [850, 10]])
+test_function([[1, 2, 3, 4, 5], [542, 31]])  # Pass
+test_function([[4, 6, 2, 5, 9, 8], [964, 852]])  # Pass
+test_function([[1, 1, 1, 1], [22]])  # Pass
+test_function([[8, 0, 1, 5, 0], [850, 10]])  # Pass
 
 print("Test 2 - Edge")
-test_function([[1], []])
-test_function([[], []])
-test_function(['hello world', []])
+test_function([[1], []])  # Pass
+test_function([[], []])  # Pass
+test_function(['hello world', []])  # Pass

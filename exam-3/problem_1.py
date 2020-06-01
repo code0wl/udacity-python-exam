@@ -20,13 +20,13 @@ def sqrt(number):
 
 
 print("Test 1 - Normal")
-print("Pass" if (3 == sqrt(9)) else "Fail")
-print("Pass" if (4 == sqrt(16)) else "Fail")
-print("Pass" if (1 == sqrt(1)) else "Fail")
-print("Pass" if (5 == sqrt(27)) else "Fail")
-print("Pass" if (8 == sqrt(64)) else "Fail")
+print("Pass" if (3 == sqrt(9)) else "Fail")  # Pass
+print("Pass" if (4 == sqrt(16)) else "Fail")  # Pass
+print("Pass" if (1 == sqrt(1)) else "Fail")  # Pass
+print("Pass" if (5 == sqrt(27)) else "Fail")  # Pass
+print("Pass" if (8 == sqrt(64)) else "Fail")  # Pass
 
 print("Test 2 - edge cases since function only handles integers")
-print("Pass" if (0 == sqrt(0)) else "Fail")
-print("Pass" if (.9 == sqrt(.9)) else "Fail")
-print("Pass" if (0.1 == sqrt(0.1)) else "Fail")
+print("Pass" if (0 == sqrt(0)) else "Fail")  # Pass
+print("Pass" if (.9 == sqrt(.9)) else "Fail")  # Pass
+print("Pass" if (0.1 == sqrt(0.1)) else "Fail")  # Pass

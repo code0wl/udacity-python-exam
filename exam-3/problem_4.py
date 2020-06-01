@@ -35,12 +35,14 @@ def test_function(test_case):
 # Tests
 
 print("Test 1 - Normal")
+# [0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2]
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
 test_function([2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2,
-               2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])
+               2, 1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1])  # [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+# [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
 
 print("Test 2 - Edge")
-test_function([0])
-test_function([])
-test_function('')
+test_function([0])  # [0]
+test_function([])  # []
+test_function('')  # []
