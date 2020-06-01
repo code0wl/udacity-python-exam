@@ -1,11 +1,7 @@
-def should_perform_func(input_list):
-    if not input_list or len(input_list) == 1 or not isinstance(input_list, list):
-        return []
-
-
 def rearrange_digits(input_list):
 
-    should_perform_func(input_list)
+    if not input_list or len(input_list) == 1 or not isinstance(input_list, list):
+        return []
 
     input_list = merge_and_sort(input_list)
 
