@@ -60,6 +60,6 @@ print(TreeInstance.find("an").suffixes())
 print(TreeInstance.find("fu").suffixes())  # ['n', 'nction']
 print(TreeInstance.find("tri").suffixes())  # ['e', 'gger', 'gonometry', 'pod']
 
-print("Test 1 - Edge return all if no entry")
+print("Test 2 - Edge return all if no entry")
 print(TreeInstance.find("").suffixes())
 # ['ant', 'anthology', 'antagonist', 'antonym', 'fun', 'function', 'factory', 'trie', 'trigger', 'trigonometry', 'tripod']
